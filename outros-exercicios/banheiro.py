@@ -1,3 +1,5 @@
+# Problema numero 1008
+
 tabela = {
     "A": [3, 10],
     "C": [5, 15],
@@ -6,6 +8,7 @@ tabela = {
 
 sexos = ["H", "M"]
 qtdConsultas = 0
+saida = []
 
 while True:
     qtdConsultas += 1
@@ -55,8 +58,9 @@ while True:
         banheiroEscolhido["tempo"] += tabela[evento][idx]
         banheiros = banheiroOrdenado
 
-    print("Consulta", str(qtdConsultas) + ":")
+    saida.append(("Consulta " + str(qtdConsultas) + ":"))
     for i in cloneIdPessoas:
         minhaPessoa = vetPessoas[i - 1]
-        print(minhaPessoa["tempo"], " ",
-              minhaPessoa["banheiro"], " ", minhaPessoa["sexo"])
+        saida.append((str(minhaPessoa["tempo"]) + " " + str(minhaPessoa["banheiro"]) + " " + minhaPessoa["sexo"]))
+
+print('\n'.join(saida))
